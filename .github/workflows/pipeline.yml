@@ -24,3 +24,6 @@ jobs:
 
         - name: Installer les dépendances
           run:  pip install -r requirements.txt
+
+        - name: Exécuter les tests
+          run: pytest --cov=app --cov-report=term-missing
