@@ -1,0 +1,21 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    container_name: sysmetrics
+    # restart: always
+    ports:
+      - "8000:8000"
+
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: agent
+    container_name: agent
+    environment:
+      - METRICS_ENDPOINT=http://api:8000/metrics
+    depends_on:
+      - api
