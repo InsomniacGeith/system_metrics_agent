@@ -1,4 +1,5 @@
 """Module de collecte des métriques système."""
+
 from __future__ import annotations
 
 import platform

@@ -1,4 +1,5 @@
 """Module de formatage des métriques."""
+
 from __future__ import annotations
 
 from typing import Any
@@ -13,9 +14,7 @@ def format_metrics(
     missing = required_keys.difference(metrics)
 
     if missing:
-        raise ValueError(
-            f"Métriques incomplètes. Clés manquantes : {sorted(missing)}"
-        )
+        raise ValueError(f"Métriques incomplètes. Clés manquantes : {sorted(missing)}")
 
     return {
         "agent": agent_name,

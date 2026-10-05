@@ -1,4 +1,5 @@
 """Point d'entrée de l'agent de collecte."""
+
 from __future__ import annotations
 
 import logging

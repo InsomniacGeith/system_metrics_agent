@@ -1,4 +1,5 @@
 """API FastAPI de réception des métriques."""
+
 from __future__ import annotations
 
 import logging
@@ -35,6 +36,7 @@ def get_metrics() -> dict[str, Any]:
         "total": len(received_metrics),
         "metrics": received_metrics,
     }
+
 
 @app.get("/health")
 def health() -> dict[str, str]:

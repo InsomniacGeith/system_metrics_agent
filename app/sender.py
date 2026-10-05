@@ -1,4 +1,5 @@
 """Module d'envoi des métriques vers une API ou un webhook."""
+
 from __future__ import annotations
 
 from typing import Any
@@ -31,9 +32,7 @@ def send_metrics(
         )
         response.raise_for_status()
     except requests.RequestException as exc:
-        raise MetricsDeliveryError(
-            f"Échec de l'envoi vers {endpoint} : {exc}"
-        ) from exc
+        raise MetricsDeliveryError(f"Échec de l'envoi vers {endpoint} : {exc}") from exc
 
     try:
         body: Any = response.json()

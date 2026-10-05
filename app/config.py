@@ -1,4 +1,5 @@
 """Chargement de la configuration externe."""
+
 import os
 from dataclasses import dataclass
 
@@ -31,9 +32,7 @@ class Settings:
             ) from exc
 
         if interval <= 0 or timeout <= 0:
-            raise ValueError(
-                "COLLECTION_INTERVAL et REQUEST_TIMEOUT doivent être > 0."
-            )
+            raise ValueError("COLLECTION_INTERVAL et REQUEST_TIMEOUT doivent être > 0.")
 
         return cls(
             metrics_endpoint=endpoint,
